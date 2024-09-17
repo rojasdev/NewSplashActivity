@@ -2,4 +2,6 @@
     <string name="app_name">New Splash Activity</string>
     <string name="drawer_open">Open Drawer</string>
     <string name="drawer_close">Close Drawer</string>
+    <string name="dark_mode">Enable Dark Mode</string>
+    <string name="dark_mode_text">Settings</string>
 </resources>

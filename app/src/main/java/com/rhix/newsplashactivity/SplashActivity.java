@@ -9,8 +9,6 @@ public class SplashActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         new Handler().postDelayed(new Runnable() {
 
             @Override
@@ -21,6 +19,6 @@ public class SplashActivity extends Activity {
 
                 finish();
             }
-        }, 5000);
+        }, 1000);
     }
 }

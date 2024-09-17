@@ -5,8 +5,18 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tvSettingsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SETTINGS Fragment"
-        android:textSize="24sp"/>
+        android:text="@string/dark_mode_text"
+        android:textSize="24sp"
+        android:paddingBottom="16dp"/>
+
+    <Switch
+        android:id="@+id/switchDarkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dark_mode"
+        android:height="60dp"
+        />
 </LinearLayout>

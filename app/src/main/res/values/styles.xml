@@ -9,4 +9,15 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
+    <!-- Dark application theme -->
+    <style name="LightTheme" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Light theme settings -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Dark theme settings -->
+    </style>
 </resources>

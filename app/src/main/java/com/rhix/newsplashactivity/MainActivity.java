@@ -1,7 +1,9 @@
 package com.rhix.newsplashactivity;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.SearchView;
@@ -32,6 +34,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Load shared preferences (dark mode option)
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean darkMode = sharedPreferences.getBoolean("dark_mode", false);
+        // Apply dark mode if enabled
+        if (darkMode) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.LightTheme);
+        }
         setContentView(R.layout.activity_main);
         // For search bar
         SearchView searchView = findViewById(R.id.search_view);
@@ -80,8 +91,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 int id = item.getItemId();
                 if (id == R.id.nav_home) {
                     selectedFragment = new FragmentHome();
-                }else if(id == R.id.nav_dashboard){
-                    selectedFragment = new FragmentDashboard();
+                }else if(id == R.id.nav_products){
+                    selectedFragment = new FragmentProducts();
                 }else if(id == R.id.nav_calendar){
                     selectedFragment = new FragmentCalendar();
                 }
