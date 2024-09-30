@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".LoginProcess"/>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

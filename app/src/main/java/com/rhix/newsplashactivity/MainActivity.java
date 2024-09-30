@@ -1,11 +1,10 @@
 package com.rhix.newsplashactivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
-import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -22,8 +21,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-import java.lang.reflect.Field;
-
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawerLayout;
@@ -37,7 +34,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Load shared preferences (dark mode option)
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean darkMode = sharedPreferences.getBoolean("dark_mode", false);
+        // set default value to false to trigger login
+        boolean loginUser = sharedPreferences.getBoolean("user_login", true);
         // Apply dark mode if enabled
+        if (!loginUser) {
+            Intent i = new Intent(MainActivity.this, LoginProcess.class);
+            startActivity(i);
+            finish();
+        }
+
         if (darkMode) {
             setTheme(R.style.DarkTheme);
         } else {
@@ -93,6 +98,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     selectedFragment = new FragmentHome();
                 }else if(id == R.id.nav_products){
                     selectedFragment = new FragmentProducts();
+                }else if(id == R.id.nav_food){
+                    selectedFragment = new FragmentFood();
                 }else if(id == R.id.nav_calendar){
                     selectedFragment = new FragmentCalendar();
                 }

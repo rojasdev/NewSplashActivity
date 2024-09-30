@@ -1,0 +1,60 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- GridView for displaying items -->
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:columnWidth="150dp"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center" />
+
+    <!-- Semi-transparent background to show when the slide view is visible -->
+    <View
+        android:id="@+id/transparentBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#80000000"
+        android:visibility="gone" />
+
+    <!-- Container for the slide view -->
+    <FrameLayout
+        android:id="@+id/slideViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        android:visibility="gone">
+
+        <!-- Slide view that will slide up from the bottom -->
+        <LinearLayout
+            android:id="@+id/slideView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp">
+
+            <!-- Content of the slide view -->
+            <!-- Example of text content inside the slide view -->
+            <TextView
+                android:id="@+id/slideViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slide View Content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp" />
+
+            <!-- Additional content can be added here -->
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

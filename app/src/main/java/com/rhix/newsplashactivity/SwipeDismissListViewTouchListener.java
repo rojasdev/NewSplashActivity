@@ -10,8 +10,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.core.view.GestureDetectorCompat;
-
 public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
 
     private final GestureDetector gestureDetector;
