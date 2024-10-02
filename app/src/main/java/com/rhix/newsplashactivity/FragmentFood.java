@@ -68,7 +68,7 @@ public class FragmentFood extends DialogFragment implements DialogListener {
 
         // Initialize the slideView and start connecting to the service to fetch data
         slideView = view.findViewById(R.id.slideView);
-        connectToService();
+        connectToService();// retrieve data from URL / API
 
         // Set touch listener for the slide view container to detect gestures
         slideViewContainer.setOnTouchListener((v, event) -> {

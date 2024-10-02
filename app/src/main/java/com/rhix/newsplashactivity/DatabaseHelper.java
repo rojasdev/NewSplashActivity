@@ -10,7 +10,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Database name and version
     private static final String DATABASE_NAME = "products.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
 
     // Table and columns
     public static final String TABLE_NAME = "products";

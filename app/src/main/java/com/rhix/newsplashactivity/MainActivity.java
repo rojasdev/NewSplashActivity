@@ -32,11 +32,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Load shared preferences (dark mode option)
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sharedPreferences = getSharedPreferences("app_prefs", MODE_PRIVATE);
         boolean darkMode = sharedPreferences.getBoolean("dark_mode", false);
         // set default value to false to trigger login
-        boolean loginUser = sharedPreferences.getBoolean("user_login", true);
-        // Apply dark mode if enabled
+        boolean loginUser = sharedPreferences.getBoolean("user_login", false);
+        Toast.makeText(this, String.valueOf(loginUser), Toast.LENGTH_SHORT).show();
+        // remove ! to disable login activity
         if (!loginUser) {
             Intent i = new Intent(MainActivity.this, LoginProcess.class);
             startActivity(i);
@@ -145,6 +146,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragment = new FragmentProfile();
         } else if (id == R.id.nav_settings) {
             fragment = new FragmentSettings();  // Add more fragments as needed
+        } else if (id == R.id.nav_logout) {
+            logoutUser(); // logout
         }
 
         // Replace the fragment if it exists
@@ -168,5 +171,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
+
+    private void logoutUser() {
+        // Clear user login state from SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("app_prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("user_login", false);
+        editor.apply();
+
+        // Redirect to LoginProcess activity
+        Intent intent = new Intent(MainActivity.this, LoginProcess.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK); // Clear activity stack
+        startActivity(intent);
+        finish(); // Close the current activity
+    }
+
 
 }

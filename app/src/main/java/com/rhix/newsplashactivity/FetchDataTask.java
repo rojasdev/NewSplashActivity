@@ -50,6 +50,8 @@ public class FetchDataTask {
                 // Parse the JSON string
                 JSONObject jsonObject = new JSONObject(response.toString());
 
+                Log.d("Array value:", String.valueOf(jsonObject));
+
                 // Get the products array
                 JSONArray productsArray = jsonObject.getJSONArray("products");
 
