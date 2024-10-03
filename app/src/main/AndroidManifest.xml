@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".MainActivity"/>
         <activity android:name=".LoginProcess"/>
+        <activity android:name=".RegisterActivity"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 

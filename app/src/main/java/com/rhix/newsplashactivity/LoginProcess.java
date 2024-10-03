@@ -3,19 +3,14 @@ package com.rhix.newsplashactivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,6 +31,7 @@ public class LoginProcess extends AppCompatActivity {
     private EditText passwordEditText;
     private Button loginButton;
     private ProgressBar progressBar;
+    private TextView registerLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +42,20 @@ public class LoginProcess extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
         progressBar = findViewById(R.id.progressBar);
+        registerLink = findViewById(R.id.registerLink);
 
         loginButton.setOnClickListener(v -> loginUser());
+
+        // Set onClick listener for login link
+        registerLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Redirect to LoginActivity
+                Intent intent = new Intent(LoginProcess.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void loginUser() {
@@ -65,7 +73,7 @@ public class LoginProcess extends AppCompatActivity {
         // Create a new thread for network operations
         new Thread(() -> {
             try {
-                URL url = new URL("validate API url"); // Replace with your API URL
+                URL url = new URL("https://devlab.helioho.st/api/validate.php"); // Replace with your API URL
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("POST");
                 urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -73,7 +81,7 @@ public class LoginProcess extends AppCompatActivity {
 
                 // Prepare the request body
                 // change with your own registered API key
-                String requestBody = "api_key=406225210452569b82787c6eb7b083f3d0&email=" + URLEncoder.encode(email, "UTF-8") +
+                String requestBody = "api_key=7999b0bd43fe96b083f8430a0de1cc65ecf3902993d15ffb6d3a287f9e939000&email=" + URLEncoder.encode(email, "UTF-8") +
                         "&password=" + URLEncoder.encode(password, "UTF-8");
 
                 // Write request body

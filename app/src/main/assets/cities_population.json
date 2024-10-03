@@ -1,0 +1,17 @@
+{
+  "cities": [
+    {"name": "Bacolod", "population": 561875},
+    {"name": "Bago", "population": 170981},
+    {"name": "Cadiz", "population": 154723},
+    {"name": "Escalante", "population": 95002},
+    {"name": "Himamaylan", "population": 106880},
+    {"name": "Kabankalan", "population": 182799},
+    {"name": "La Carlota", "population": 65722},
+    {"name": "San Carlos", "population": 132536},
+    {"name": "Sagay", "population": 148894},
+    {"name": "Silay", "population": 132742},
+    {"name": "Sipalay", "population": 70810},
+    {"name": "Talisay", "population": 102214},
+    {"name": "Victorias", "population": 87008}
+  ]
+}

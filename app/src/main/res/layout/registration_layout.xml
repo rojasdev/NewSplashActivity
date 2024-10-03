@@ -20,10 +20,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The App"
+        android:text="Register"
         android:textSize="24sp"
-    android:textStyle="bold"
-    android:layout_marginBottom="24dp" /> <!-- Add bottom margin for spacing -->
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp" /> <!-- Add bottom margin for spacing -->
+
+    <EditText
+        android:id="@+id/lastNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:minHeight="56dp"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="16dp" /> <!-- Add bottom margin for spacing -->
+
+    <EditText
+        android:id="@+id/firstNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:minHeight="56dp"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="16dp" /> <!-- Add bottom margin for spacing -->
 
     <EditText
         android:id="@+id/emailEditText"
@@ -34,7 +57,7 @@
         android:padding="12dp"
         android:textSize="16sp"
         android:background="@drawable/edittext_background"
-    android:layout_marginBottom="16dp" /> <!-- Add bottom margin for spacing -->
+        android:layout_marginBottom="16dp" /> <!-- Add bottom margin for spacing -->
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -46,25 +69,36 @@
         android:padding="12dp"
         android:textSize="16sp"
         android:background="@drawable/edittext_background"
-    android:layout_marginBottom="24dp" /> <!-- Add bottom margin for spacing -->
+        android:layout_marginBottom="16dp" /> <!-- Add bottom margin for spacing -->
 
-    <Button
-        android:id="@+id/loginButton"
+    <EditText
+        android:id="@+id/confirmPasswordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:minHeight="56dp"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="24dp" /> <!-- Add bottom margin for spacing -->
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
         android:minHeight="56dp"
         android:textSize="18sp"
         android:backgroundTint="@color/colorAccent"
-    android:textColor="@android:color/white"
-    android:padding="12dp"
-    android:layout_marginBottom="16dp"/> <!-- Add bottom margin for spacing -->
-
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/> <!-- Add bottom margin for spacing -->
     <TextView
-        android:id="@+id/registerLink"
+        android:id="@+id/loginLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account? Register here"
+        android:text="Already have an account? Login here"
         android:textColor="@color/colorAccent"
         android:textSize="16sp"
         android:minHeight="48dp"
@@ -72,7 +106,6 @@
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:focusable="true"/>
-
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"

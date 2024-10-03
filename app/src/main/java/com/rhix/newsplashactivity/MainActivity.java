@@ -3,7 +3,6 @@ package com.rhix.newsplashactivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -101,8 +100,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     selectedFragment = new FragmentProducts();
                 }else if(id == R.id.nav_food){
                     selectedFragment = new FragmentFood();
-                }else if(id == R.id.nav_calendar){
-                    selectedFragment = new FragmentCalendar();
+                }else if(id == R.id.nav_graphs){
+                    selectedFragment = new FragmentGraphs();
                 }
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
