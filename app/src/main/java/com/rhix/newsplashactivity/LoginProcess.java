@@ -73,7 +73,7 @@ public class LoginProcess extends AppCompatActivity {
         // Create a new thread for network operations
         new Thread(() -> {
             try {
-                URL url = new URL("https://devlab.helioho.st/api/validate.php"); // Replace with your API URL
+                URL url = new URL("replace with validate API URL"); // Replace with your API URL
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("POST");
                 urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -81,7 +81,7 @@ public class LoginProcess extends AppCompatActivity {
 
                 // Prepare the request body
                 // change with your own registered API key
-                String requestBody = "api_key=7999b0bd43fe96b083f8430a0de1cc65ecf3902993d15ffb6d3a287f9e939000&email=" + URLEncoder.encode(email, "UTF-8") +
+                String requestBody = "api_key={replace with your own API key}&email=" + URLEncoder.encode(email, "UTF-8") +
                         "&password=" + URLEncoder.encode(password, "UTF-8");
 
                 // Write request body
