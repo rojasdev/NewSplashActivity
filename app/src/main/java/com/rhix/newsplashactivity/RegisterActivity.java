@@ -23,8 +23,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText lastNameEditText, firstNameEditText, emailEditText, passwordEditText, confirmPasswordEditText;
     private Button registerButton;
     private ProgressBar progressBar;
-    private static final String API_URL = "https://devlab.helioho.st/api/register.php";
-    private static final String API_KEY = "7999b0bd43fe96b083f8430a0de1cc65ecf3902993d15ffb6d3a287f9e939000"; // Replace with your API key
+    private static final String API_URL = "Replace with registration API URL";
+    private static final String API_KEY = "Replace with your own API key"; // Replace with your API key
     private TextView loginLink;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
